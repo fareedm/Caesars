@@ -21,10 +21,12 @@ public class TestCaesarHomePage  extends TestTemplate{
 		boolean isSuccess = loginPage.login(this.url, userName, password);
 		if(isSuccess)
 		{
+			TestTemplate.testReport.logSuccess("Login", String.format("Login Successful For User - %s", userName), this.getScreenShotName());
 			LOG.info(String.format("Login Successful for user - %s", userName));
 		}
 		else
 		{
+			TestTemplate.testReport.logFailure("Login", String.format("Login Failure For User - %s", userName), this.getScreenShotName());
 			LOG.error(String.format("Login Not Successful for user - %s", userName));
 		}
 		
